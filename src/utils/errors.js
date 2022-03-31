@@ -1,7 +1,7 @@
 import logger from './logger'
 
 const notFound = (req, res, next) => {
-  const error = new Error('Not Found - ${req.url}')
+  const error = new Error(`Not Found - ${req.url}`)
   res.status(404)
   next(error)
 }
@@ -15,8 +15,8 @@ const errorHandler = (error, req, res, next) => {
   res.status(statusCode)
   res.send({
     message: error.message,
-    stack: process.env.NODE_ENV == 'production' ? '💩' : error.stack,
+    stack: process.env.NODE_ENV === 'production' ? '💩' : error.stack,
   })
 }
 
-export default (notFound, errorHandler)
+export default { notFound, errorHandler }

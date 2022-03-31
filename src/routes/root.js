@@ -1,5 +1,5 @@
 import { Router } from 'express'
-import { append } from 'express/lib/response'
+
 import logger from '../utils/logger'
 
 const router = Router()
