@@ -1,10 +1,8 @@
 import { Router } from 'express'
-
-import root from './root'
-import api from './api'
-
+import todos from './todos'
 const router = Router()
 
 router.use(root)
-router.use('/api', api)
+router.use('/todos', todos)
+
 export default router
