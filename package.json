@@ -1,0 +1,25 @@
+{
+  "name": "server-node",
+  "version": "1.0.0",
+  "description": "Basic REST API Server",
+  "main": "src/index.js",
+  "scripts": {
+    "build": "babel ./src --out-dir ./build",
+    "start": "node ./build/index/js",
+    "dev": "nodemon --exec babel-node src/index.js",
+    "lint": "eslint ."
+  },
+  "author": "Adolfo Pena",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.17.6",
+    "@babel/core": "^7.17.8",
+    "@babel/node": "^7.16.8",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/runtime": "^7.17.8",
+    "nodemon": "^2.0.15"
+  },
+  "dependencies": {
+    "express": "^4.17.3"
+  }
+}
