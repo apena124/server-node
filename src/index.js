@@ -4,6 +4,7 @@ import cors from 'cors'
 
 import config from './utils/config'
 import logger from './utils/logger'
+import errors from './utils/errors'
 
 const app = express()
 
@@ -15,5 +16,8 @@ app.get('/', (req, res) => {
   logger.log.info('Doing a call')
   res.send({ msg: 'hello there' })
 })
+
+app.use(errors.notFound)
+app.use(errors.errorHandler)
 
 app.listen(config.port)
